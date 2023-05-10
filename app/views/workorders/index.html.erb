@@ -1,0 +1,19 @@
+<h1>Work Orders</h1>
+<ul>
+  <% @workorders.each do |w| %>
+    <li>
+      <%= link_to w.title, workorder %>
+    </li>
+    <li>
+      <%= w.multiplier %>
+    </li>
+    <li>
+      <%= w.labor_hours %>
+    </li>
+    <li>
+      <%= w.description %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Work Order", new_workorder_path, class: "purple"  %>

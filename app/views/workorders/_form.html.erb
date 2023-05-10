@@ -1,0 +1,27 @@
+<%= form_with model: @workorder do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title%>
+    <% workorder.errors.full_messages_for(:title).each do |message| %>
+      <div style="color:red;"><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= f.label :multiplier %><br>
+    <%= f.number_field :multiplier%>
+
+  </div>
+  <div>
+    <%= f.label :labor_hours %><br>
+    <%= f.number_field :labor_hours%>
+
+  </div>
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_area :description%>
+
+  </div>
+  <div>
+    <%= f.submit "Create Workorder", "aria-label": "Create Workorder", class: "btn btn-lg btn-primary mt-3" %>
+  </div>
+<% end %>
