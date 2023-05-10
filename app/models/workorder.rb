@@ -1,6 +1,5 @@
 class Workorder < ActiveRecord::Base
-  belongs_to :user, foreign_key: true
+  belongs_to :user
 
   validates :title, presence: true
-  validates :labor_hours, presence: true
 end

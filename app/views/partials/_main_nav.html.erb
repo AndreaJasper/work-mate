@@ -9,22 +9,17 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-            <%# <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> %>
           </li>
           <li class="nav-item">
             <%= link_to "Work Orders", workorders_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%# <%= link_to, "Manage Account", edit_user_path, class: "nav-link" %>
-          </li>
         </ul>
           <div class="lg-ml-auto pl-0 user-menu dropdown">
             <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Manage Account
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Edit Profile</a>
+              <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %>
             </div>
           </div>

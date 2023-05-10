@@ -1,0 +1,48 @@
+<div class="w-25 mx-auto mt-3">
+    <h1 class="text-center">Hi <%= @user.name %></h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="py-4 border-bottom">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <p class="card-text d-inline mr-5">Username</p>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h5 class="sm-pl-0 md-pl-5 card-text d-inline"><%= @user.username %></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 border-bottom">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <p class="card-text d-inline mr-5">Name</p>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h5 class="sm-pl-0 md-pl-5 card-text d-inline"><%= @user.name %></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 border-bottom">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <p class="card-text d-inline mr-5">Email</p>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h5 class="sm-pl-0 md-pl-5 card-text d-inline"><%= @user.email %></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <p class="card-text d-inline mr-5">Passwword</p>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <h5 class="sm-pl-0 md-pl-5 card-text d-inline"><%= link_to "Rest Password" %></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary mt-3" %>
+</div>

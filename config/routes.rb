@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   
   resources :workorders
 
-  get 'login'  => 'sessions#new'
-  post 'login'  => 'sessions#create'
-  get 'logout'  => 'sessions#destroy'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+  post 'logou', to: 'sessions#destory'
 end

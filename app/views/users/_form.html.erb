@@ -1,19 +1,16 @@
 <%= form_for(@user) do |f| %>
     <div class="form-group">
-        <%= f.text_field :first_name, placeholder:"First Name", "aria-label": "First Name", class: "form-control" %>
+        <%= f.text_field :username, placeholder:"Username", "aria-label": "Username", class: "form-control"  %>
     </div>
     <div class="form-group">
-        <%= f.text_field :last_name, placeholder:"Last Name", "aria-label": "Last Name", class: "form-control" %>
+        <%= f.text_field :name, placeholder:"Name", "aria-label": "Name", class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.text_field :email,placeholder:"Email", "aria-label": "Email",  class: "form-control"  %>
     </div>
     <div class="form-group">
-        <%= f.text_field :username, placeholder:"Username", "aria-label": "Username", class: "form-control"  %>
-    </div>
-    <div class="form-group">
         <%= f.password_field :password, placeholder:"Password", "aria-label": "Password", class: "form-control"  %>
     </div>
     
-    <%= f.submit "Sign up", "aria-label": "Sign up", class: "btn btn-lg btn-primary btn-block mt-3" %>
+    <%= f.submit action_name == "new" ? "Create Account" : "Save Changes", class: "btn btn-lg btn-primary btn-block mt-3" %>
 <% end %>

@@ -1,6 +1,6 @@
 require 'pry'
 class WorkordersController < ApplicationController
-  before_action :require_login, only: [:index, :show]
+  before_action :require_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @workorders = Workorder.all
@@ -18,7 +18,7 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.new(workorder_params)
     @workorder.user_id = current_user.id
 
-    binding.pry
+    # binding.pry
     if @workorder.save
       redirect_to @workorder
     else
@@ -34,7 +34,7 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.find(params[:id])
 
     if @workorder.update(workorder_params)
-      redirect_to @workorder
+      redirect_to @workorder, notice: 'Workorder successfully updated.'
     else
       render :edit
     end
@@ -49,6 +49,6 @@ class WorkordersController < ApplicationController
 
   private
   def workorder_params
-      params.require(:workorder).permit(:title, :description, :multiplier, :labor_hours)
+      params.require(:workorder).permit(:title, :description, :multiplier, :labor_hours, :user_id)
   end
 end
