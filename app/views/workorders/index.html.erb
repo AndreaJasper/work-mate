@@ -1,19 +1,32 @@
 <h1>Work Orders</h1>
-<ul>
-  <% @workorders.each do |w| %>
-    <li>
-      <%= link_to w.title, workorder %>
-    </li>
-    <li>
-      <%= w.multiplier %>
-    </li>
-    <li>
-      <%= w.labor_hours %>
-    </li>
-    <li>
-      <%= w.description %>
-    </li>
-  <% end %>
-</ul>
-
 <%= link_to "New Work Order", new_workorder_path, class: "purple"  %>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <th scope="col">Created Date</th>
+      <th scope="col">Machine</th>
+      <th scope="col">Multiplier</th>
+      <th scope="col">Labor Hours</th>
+      <th scope="col">Description</th>
+      <th scope="col">Complete</th>
+      <th scope="col">Settings</th>
+    </thead>
+    <tbody>
+      <% @workorders.each do |w| %>
+        <tr>
+          <td><%= w.created_at.strftime("%B %d %Y") %></td>
+          <td><%= link_to(@w) do %>
+            <%= w.title %>
+          <% end %></td>
+          <td><%= w.multiplier %></td>
+          <td><%= w.labor_hours %></td>
+          <td><%= truncate(w.description, length: 30) %></td>
+          <td>Complete</td>
+          <td><%= link_to "Edit", edit_workorder_path(w) %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

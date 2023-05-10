@@ -18,7 +18,6 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.new(workorder_params)
     @workorder.user_id = current_user.id
 
-    # binding.pry
     if @workorder.save
       redirect_to @workorder
     else
@@ -43,8 +42,9 @@ class WorkordersController < ApplicationController
   def destroy
     @workorder = Workorder.find(params[:id])
     @workorder.destroy
+    binding.pry
 
-    redirect_to root_path, status: :see_other
+    redirect_to root_path, notice: 'Workorder has been successfully deleted.'
   end
 
   private
