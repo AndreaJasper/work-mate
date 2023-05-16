@@ -5,8 +5,7 @@
 <p>Description: <%= @workorder.description %></p>
 <ul>
   <li><%= link_to "Edit", edit_workorder_path(@workorder) %></li>
-  <li><%= link_to "Delete", workorder_path(@workorder), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-  } %></li>
+  <li><%= button_to "Delete", workorder_path, method: :delete, data: {
+                    confirm: "Are you sure?"
+  }, class: 'text-danger'  %></li>
 </ul>

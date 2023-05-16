@@ -24,10 +24,9 @@
           <td><%= truncate(w.description, length: 30) %></td>
           <td>Complete</td>
           <td><%= link_to "Edit", edit_workorder_path(w) %></td>
-          <td><%= link_to "Delete", workorder_path(@workorder), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-  } %></td>
+          <td><%= button_to "Delete", w, method: :delete, data: {
+                    confirm: "Are you sure?"
+  }, class: 'text-danger'  %></td>
         <tr>
       <% end %>
     </tbody>
