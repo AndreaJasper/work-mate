@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
-  post 'logou', to: 'sessions#destory'
+  post 'logout', to: 'sessions#destory'
 end
